@@ -25,7 +25,7 @@ function Navigation({ currentSection, setCurrentSection }) {
 		<nav className="navigation">
 			<div className="nav-container">
 				<div className="nav-brand" onClick={() => handleNavClick('home')}>
-					<span className="brand-icon">⚖️</span>
+					<span className="brand-icon">/</span>
 					<span className="brand-text">
 						<strong>BallotFighter</strong>
 						<span className="brand-tagline">Power to the People</span>
