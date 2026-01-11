@@ -1,0 +1,128 @@
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.about {
+  background: white;
+
+  &-content {
+    margin-bottom: 4rem;
+  }
+
+  &-main {
+    background: linear-gradient(135deg, rgba(0, 106, 78, 0.05) 0%, rgba(0, 106, 78, 0.1) 100%);
+    padding: 3rem;
+    border-radius: 16px;
+    margin-bottom: 3rem;
+
+    h3 {
+      color: $primary;
+      margin-bottom: 1.5rem;
+    }
+
+    p {
+      font-size: 1.05rem;
+      line-height: 1.8;
+      color: $dark;
+    }
+  }
+}
+
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+.principle-card {
+  background: white;
+  border: 2px solid $border;
+  border-radius: 12px;
+  padding: 2rem;
+  text-align: center;
+  transition: all 0.3s ease;
+
+  &:hover {
+    border-color: $primary;
+    box-shadow: 0 10px 30px rgba(0, 106, 78, 0.15);
+    transform: translateY(-5px);
+  }
+
+  h4 {
+    color: $primary;
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+  }
+
+  p {
+    color: $gray;
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+}
+
+.principle-icon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.alliance-info {
+  background: white;
+  border-left: 4px solid $secondary;
+  padding: 2.5rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+
+  h3 {
+    color: $secondary;
+    margin-bottom: 1rem;
+  }
+
+  p {
+    font-size: 1.05rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+  }
+}
+
+.roadmap-preview {
+  background: linear-gradient(135deg, rgba(244, 42, 65, 0.05) 0%, rgba(244, 42, 65, 0.1) 100%);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-top: 2rem;
+
+  h4 {
+    color: $secondary;
+    margin-bottom: 1.5rem;
+    font-size: 1.15rem;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+
+  li {
+    padding: 0.75rem 0;
+    font-size: 1rem;
+    color: $dark;
+    border-bottom: 1px solid rgba(124, 58, 237, 0.1);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+@include respond-to('md') {
+  .about-main {
+    padding: 2rem;
+  }
+
+  .principles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .alliance-info {
+    padding: 1.5rem;
+  }
+}

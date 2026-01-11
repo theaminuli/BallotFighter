@@ -1,0 +1,190 @@
+// ==========================================
+// Utility Classes
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+// Container
+.container {
+  @include container;
+}
+
+// Section
+.section {
+  @include section-spacing;
+}
+
+// Section Header
+.section-header {
+  text-align: center;
+  margin-bottom: $spacing-3xl;
+
+  h1, h2 {
+    color: $primary;
+    margin-bottom: $spacing-md;
+  }
+
+  .section-subtitle {
+    font-size: 1.15rem;
+    color: $gray;
+    max-width: 700px;
+    margin: 0 auto;
+  }
+}
+
+// Buttons
+.btn {
+  @include button-base;
+
+  &-primary {
+    @include button-primary;
+  }
+
+  &-secondary {
+    @include button-secondary;
+  }
+
+  &-outline {
+    @include button-outline;
+  }
+
+  &-white {
+    background: $white;
+    color: $primary;
+
+    &:hover {
+      transform: translateY(-2px);
+      box-shadow: $shadow-md;
+    }
+  }
+
+  &-lg {
+    padding: $spacing-lg $spacing-2xl;
+    font-size: 1.15rem;
+  }
+
+  &-sm {
+    padding: $spacing-sm $spacing-md;
+    font-size: 0.9rem;
+  }
+}
+
+// Form elements
+.form-group {
+  margin-bottom: $spacing-lg;
+
+  label {
+    display: block;
+    margin-bottom: $spacing-sm;
+    font-weight: $font-semibold;
+    color: $dark;
+  }
+}
+
+.form-control {
+  @include input-base;
+}
+
+textarea.form-control {
+  min-height: 120px;
+  resize: vertical;
+}
+
+select.form-control {
+  cursor: pointer;
+  background-color: $white;
+}
+
+// Text utilities
+.text-center {
+  text-align: center;
+}
+
+.text-left {
+  text-align: left;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-primary {
+  color: $primary;
+}
+
+.text-secondary {
+  color: $secondary;
+}
+
+.text-gray {
+  color: $gray;
+}
+
+.text-muted {
+  color: $gray-light;
+}
+
+// Spacing utilities
+.mt-0 { margin-top: 0; }
+.mt-1 { margin-top: $spacing-sm; }
+.mt-2 { margin-top: $spacing-md; }
+.mt-3 { margin-top: $spacing-lg; }
+.mt-4 { margin-top: $spacing-xl; }
+.mt-5 { margin-top: $spacing-2xl; }
+
+.mb-0 { margin-bottom: 0; }
+.mb-1 { margin-bottom: $spacing-sm; }
+.mb-2 { margin-bottom: $spacing-md; }
+.mb-3 { margin-bottom: $spacing-lg; }
+.mb-4 { margin-bottom: $spacing-xl; }
+.mb-5 { margin-bottom: $spacing-2xl; }
+
+.pt-0 { padding-top: 0; }
+.pt-1 { padding-top: $spacing-sm; }
+.pt-2 { padding-top: $spacing-md; }
+.pt-3 { padding-top: $spacing-lg; }
+.pt-4 { padding-top: $spacing-xl; }
+.pt-5 { padding-top: $spacing-2xl; }
+
+.pb-0 { padding-bottom: 0; }
+.pb-1 { padding-bottom: $spacing-sm; }
+.pb-2 { padding-bottom: $spacing-md; }
+.pb-3 { padding-bottom: $spacing-lg; }
+.pb-4 { padding-bottom: $spacing-xl; }
+.pb-5 { padding-bottom: $spacing-2xl; }
+
+// Display utilities
+.d-none {
+  display: none;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.d-grid {
+  display: grid;
+}
+
+// Flex utilities
+.justify-center {
+  justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.align-center {
+  align-items: center;
+}
+
+.gap-1 { gap: $spacing-sm; }
+.gap-2 { gap: $spacing-md; }
+.gap-3 { gap: $spacing-lg; }
+.gap-4 { gap: $spacing-xl; }

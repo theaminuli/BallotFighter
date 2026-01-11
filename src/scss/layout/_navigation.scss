@@ -1,0 +1,161 @@
+// ==========================================
+// Navigation Component
+// ==========================================
+
+@use '../abstracts/variables' as *;
+@use '../abstracts/mixins' as *;
+
+.navigation {
+  background: $white;
+  box-shadow: $shadow-sm;
+  position: sticky;
+  top: 0;
+  z-index: $z-sticky;
+  padding: $spacing-sm 0;
+
+  .nav-container {
+    @include container;
+    @include flex-between;
+  }
+
+  .nav-brand {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+    cursor: pointer;
+    transition: transform $transition-base;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+    .brand-icon {
+      font-size: 2rem;
+    }
+
+    .brand-text {
+      @include flex-column;
+
+      strong {
+        font-family: $font-heading;
+        font-size: 1.5rem;
+        color: $primary;
+        line-height: 1;
+      }
+
+      .brand-tagline {
+        font-size: 0.75rem;
+        color: $gray;
+        font-weight: $font-medium;
+      }
+    }
+  }
+
+  .nav-menu {
+    display: flex;
+    list-style: none;
+    gap: $spacing-xs;
+    margin: 0;
+    padding: 0;
+
+    li {
+      margin: 0;
+    }
+
+    .nav-link {
+      display: flex;
+      align-items: center;
+      gap: $spacing-xs;
+      padding: 0.625rem .5rem;
+      background: none;
+      border: none;
+      border-radius: $radius-sm;
+      font-family: inherit;
+      font-size: 0.95rem;
+      font-weight: $font-semibold;
+      color: $dark;
+      cursor: pointer;
+      transition: all $transition-base;
+      white-space: nowrap;
+
+      &:hover {
+        background: $light;
+        color: $primary;
+      }
+
+      &.active {
+        background: $primary;
+        color: $white;
+      }
+
+      .nav-icon {
+        font-size: 1.1rem;
+      }
+    }
+  }
+
+  .menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: $spacing-xs;
+
+    span {
+      width: 25px;
+      height: 3px;
+      background: $dark;
+      border-radius: 3px;
+      transition: all $transition-base;
+    }
+
+    &.active {
+      span:nth-child(1) {
+        transform: rotate(45deg) translate(8px, 8px);
+      }
+
+      span:nth-child(2) {
+        opacity: 0;
+      }
+
+      span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -7px);
+      }
+    }
+  }
+
+  @include respond-to('lg') {
+    .nav-menu {
+      position: fixed;
+      top: 70px;
+      right: -100%;
+      flex-direction: column;
+      background: $white;
+      width: 280px;
+      padding: $spacing-lg;
+      box-shadow: $shadow-lg;
+      border-radius: $radius-lg 0 0 $radius-lg;
+      transition: right $transition-base;
+      gap: $spacing-sm;
+      max-height: calc(100vh - 70px);
+      overflow-y: auto;
+      @include custom-scrollbar;
+
+      &.active {
+        right: 0;
+      }
+
+      .nav-link {
+        width: 100%;
+        justify-content: flex-start;
+        padding: $spacing-md;
+      }
+    }
+
+    .menu-toggle {
+      display: flex;
+    }
+  }
+}
