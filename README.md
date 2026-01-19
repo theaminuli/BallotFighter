@@ -196,16 +196,6 @@ We welcome contributions! Please follow these steps:
 
 This project is licensed under the MIT License - see the LICENSE file for details.
 
-## 👥 Team
-
-**Election Alliance - Ballot Fighter Squad**
-
-For questions, support, or collaboration:
-- 📧 Email: support@ballotfighter.com
-- 🌐 Website: https://ballotfighter.com
-- 📱 Twitter: @BallotFighter
-- 📘 Facebook: /BallotFighter
-
 ## 🙏 Acknowledgments
 
 - Bangladesh Flag colors and symbolism
